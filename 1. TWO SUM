@@ -1,0 +1,41 @@
+APPROACH: 
+1. We need to iterate through the array and check if any two numbers add up to the target.
+2. To avoid using the same element twice, we can start the second iteration from the next index of the first iteration.
+3. If we find a pair of numbers that add up to the target, we return their indices.
+
+
+CODE:
+def two_sum(nums, target):
+    for i in range(len(nums)):
+        for j in range(i+1, len(nums)):
+            if nums[i] + nums[j] == target:
+                return [i, j]
+            print(two_sum(nums, target))
+            
+            
+-def is a keyword that defines a function.
+-two_sum is the name of the function that takes two arguments, nums and target.
+-We use two nested for loops to iterate over the array nums.
+-range(len(nums)) returns a sequence of numbers from 0 to len(nums)-1.
+-range(i+1, len(nums)) returns a sequence of numbers from i+1 to len(nums)-1.
+-if nums[i] + nums[j] == target: checks if the sum of nums[i] and nums[j] is equal to the target.
+-If we find a pair of numbers that add up to the target, we return their indices as a list [i, j].
+
+
+Time complexity: O(n^2)
+The function uses two nested loops to iterate over the array. The outer loop runs n times, where n is the length of the array.
+The inner loop runs n-1, n-2, n-3, ..., 1 times respectively, because it starts from the next index of the outer loop and goes until the end of the array.
+Therefore, the total number of iterations is (n-1) + (n-2) + (n-3) + ... + 1 = n(n-1)/2, which is O(n^2).
+The rest of the operations, including the comparisons and the list creation, take constant time.
+
+
+Space complexity: O(1)
+The function uses a list to store the output, which takes O(1) space.
+The rest of the variables used in the function, such as i, j, and nums, take constant space.
+
+ 
+
+
+
+
+
