@@ -1,0 +1,9 @@
+# Write your MySQL query statement below
+
+select score , 
+dense_rank() 
+OVER (  order by score desc ) 
+AS 'rank'
+from Scores;
+
+#Here dense_rank() is a pre defined function that is used to rank the rows of a certain column, in a way that if two rows have the same value then it will sign the same rank to both the rows and will give the next consequtive rank to the next row, without missing out any rank number.
